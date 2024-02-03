@@ -247,8 +247,8 @@ console.log(`${date}/${month}/${year_$} ${hours}:${minutes}`); // 4/1/2020 0:56
 //10.If the length of your name is greater than 7 say, your name is long else say your name is short.
 
 //# code
-const entrName = prompt("enter your name");
-console.log(entrName.length);
+//const entrName = prompt("enter your name");
+//console.log(entrName.length);s
 
 function checkLenghtOfTheName() {
   if (entrName.length > 7) {
@@ -261,7 +261,7 @@ function checkLenghtOfTheName() {
   );
 }
 
-console.log(checkLenghtOfTheName());
+//console.log(checkLenghtOfTheName());
 
 //11.Compare your first name length and your family name length and you should get this output.
 
@@ -272,9 +272,9 @@ console.log(checkLenghtOfTheName());
 let firstName1 = "Asabeneh";
 let lastName1 = "Yetayeh";
 let Compare = firstName1.length === lastName1.length;
-alert(
-  `${Compare} Your first name, Asabeneh is longer than your family name, Yetayeh `
-);
+//alert(
+//  `${Compare} Your first name, Asabeneh is longer than your family name, Yetayeh `
+//);
 
 //12.Declare two variables myAge and yourAge and assign them initial values and myAge and yourAge.
 
@@ -282,11 +282,45 @@ alert(
 //let yourAge = 25
 //I am 225 years older than you.
 
+let myAge = 250;
+let yourAge = 50;
+let CheckAge = myAge - yourAge;
+console.log(`I am ${CheckAge} years older than you.`);
+
 //Using prompt get the year the user was born and if the user is 18 or above allow the user to drive if not tell the user to wait a certain amount of years.
 //Enter birth year: 1995
 //You are 25. You are old enough to drive
 //Enter birth year: 2005
 //You are 15. You will be allowed to drive after 3 years.
+
+const getYear = Number(prompt("Enter birth year:"));
+console.log(getYear);
+
+const now10 = new Date();
+//console.log(now);
+//year
+const currentYear = new Date().getFullYear();
+console.log(currentYear);
+let userAge = currentYear - getYear;
+console.log(userAge);
+
+console.log(typeof getYear);
+console.log(typeof currentYear);
+
+function checkUserAge(userAge) {
+  console.log({ userAge });
+  if (userAge >= 18) {
+    alert(`You are ${getYear}. You are old enough to drive`);
+  } else {
+    alert(
+      `You are ${getYear}. You will be allowed to drive after ${
+        18 - userAge
+      } years.`
+    );
+  }
+}
+
+console.log(checkUserAge(userAge));
 
 //Write a script that prompt the user to enter number of years. Calculate the number of seconds a person can live. Assume some one lives just hundred years
 //Enter number of years you live: 100
@@ -297,6 +331,45 @@ alert(
 //DD-MM-YYYY HH:mm
 //DD/MM/YYYY HH:mm
 
+const now5 = new Date();
+const year5 = now.getFullYear(); // return year
+const month5 = now.getMonth() + 1; // return month(0 - 11)
+const date5 = now.getDate(); // return date (1 - 31)
+const hours5 = now.getHours(); // return number (0 - 23)
+const minutes5 = now.getMinutes(); // return number (0 -59)
+
+console.log(`${year5}/${month5}/${date5} ${hours5}:${minutes5}`); // 4/1/2020 0:56
+console.log(`${date5}/${month5}/${year5} ${hours5}:${minutes5}`); // 4/1/2020 0:56
+console.log(`${date5}-${month5}-${year5} ${hours5}:${minutes5}`); // 4/1/2020 0:56
+
 //Exercises: Level 3
 //Create a human readable time format using the Date time object. The hour and the minute should be all the time two digits(7 hours should be 07 and 5 minutes should be 05 )
-//YYY-MM-DD HH:mm eg. 20120-01-02 07:05
+//YYY-MM-DD HH:mm eg. 2012-01-02 07:05
+
+const now8 = new Date();
+const currYear = now8.getFullYear();
+const currMonth = now8.getMonth();
+const currDate = now8.getDate();
+const currHour = now8.getHours();
+const currMin = now.getMinutes(); // return number (0 -59)
+const currSec = now8.getSeconds();
+
+function getHumanReadableHour() {
+  if (now8.getHours() - 12 < 10) {
+    return "0" + (now8.getHours() - 12); // 0 + 20 - 12
+  } else {
+    return now8.getHours();
+  }
+}
+
+function getHumanReadableMin() {
+  if (now8.getMinutes() - 10 < 10) {
+    return "0" + (now8.getMinutes() - 10); // 0 + 20 - 12
+  } else {
+    return now8.getMinutes();
+  }
+}
+
+console.log(
+  `${currYear}/${currMonth}/${currDate}  ${getHumanReadableHour()}:${getHumanReadableMin()}:${currSec}`
+); // 4/1/2020 0:56
