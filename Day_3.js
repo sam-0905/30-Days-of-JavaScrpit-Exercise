@@ -56,7 +56,14 @@ function checkAgeDiff() {
 let a = 4;
 let b = 10;
 
-//let checkAOrB = checkAOrB ? a > b : console.log(a) ? b > a : console.log(b);
+let checkAOrB =
+  a > b
+    ? console.log(`${a} is greater than ${b} `)
+    : console.log(`${b} is greater than ${a}`);
+
+//if (true) {, ... } else {.. }
+
+//a > b ? () : ()
 
 function checkNum() {
   if (a > b) {
@@ -67,10 +74,10 @@ function checkNum() {
 }
 
 console.log(checkNum());
-//console.log(checkAOrB);
+console.log(checkAOrB);
 
-let number = prompt(`Enter a number`);
-console.log(number);
+//let number = prompt(`Enter a number`);
+//console.log(number);
 
 function checkEvenOrOdd() {
   if (number % 2 === 0) {
@@ -80,22 +87,39 @@ function checkEvenOrOdd() {
   }
 }
 
-console.log(checkEvenOrOdd());
+//console.log(checkEvenOrOdd());
 
 /*
 //Exercises: Level 2
-Write a code which can give grades to students according to theirs scores:
+1.Write a code which can give grades to students according to theirs scores:
 80-100, A
 70-89, B
 60-69, C
 50-59, D
 0-49, F
-Check if the season is Autumn, Winter, Spring or Summer. If the user input is :
+
+2.Check if the season is Autumn, Winter, Spring or Summer. If the user input is :
 September, October or November, the season is Autumn.
 December, January or February, the season is Winter.
 March, April or May, the season is Spring
 June, July or August, the season is Summer
-Check if a day is weekend day or a working day. Your script will take day as an input.
+
+if(month === "sept" || month === "octob" || month === "nov"){
+    season = "autumn"
+}
+
+let season = "";
+switch(month) {
+    case "sept":
+    case "oct":
+    case "nov":
+        season = "autumn"
+        break;
+    
+    case ""
+}
+
+3.Check if a day is weekend day or a working day. Your script will take day as an input.
     What is the day  today? Saturday
     Saturday is a weekend.
 
@@ -109,19 +133,117 @@ Check if a day is weekend day or a working day. Your script will take day as an 
     Friday is a working day.
 
     **/
+let score = +prompt("Enter your score: ");
+
+switch (true) {
+  case score > 80 && score <= 100:
+    console.log("A");
+    break;
+  case score > 70 && score <= 80:
+    console.log("B");
+    break;
+  case score > 60 && score <= 70:
+    console.log("C");
+    break;
+  case score > 50 && score <= 60:
+    console.log("D");
+    break;
+  case score > 0 && score <= 50:
+    console.log("E");
+    break;
+  default:
+    console.log("Entered value was not a number", score);
+}
+
+//console.log(score);
+
+let month = prompt("Enter the month: ");
+let season = "";
+
+switch (month) {
+  case "September":
+  case "October":
+  case "November":
+    season = "autumn";
+    console.log(season);
+    break;
+
+  case "December":
+  case "January":
+  case "February":
+    season = "Winter";
+    console.log(season);
+    break;
+
+  case "March":
+  case "April":
+  case "May":
+    season = "Spring";
+    console.log(season);
+    break;
+
+  case "June":
+  case "July":
+  case "August":
+    season = "Summer";
+    console.log(season);
+    break;
+  default:
+    console.log("this is not a month");
+}
+
+let dayUserInput = prompt("What day is today ?");
+let day = dayUserInput.toLowerCase();
+
+switch (dayUserInput) {
+  case "monday":
+  case "tuesday":
+  case "wednesday":
+  case "thursday":
+  case "friday":
+    console.log(`${day} is working day`);
+    break;
+
+  case "saturday":
+  case "sunday":
+    console.log(`${day} is working day`);
+    break;
+
+  default:
+    console.log("It is not a week day.");
+}
+
+//Aneena Example
+//let occupation = "";
+
+//switch (occupation) {
+//  case "Doctor":
+//    console.log(`Appu is a ${occupation}`);
+//    console.log("Summa");
+//    break;
+//  case "Engineer":
+//    console.log(`Aneena is an SSE`);
+//    break;
+//  case "Artist":
+//    console.log(`Oscar is a fun ${occupation}`);
+//    break;
+//  default:
+//    console.log(`Someone is idle :)`);
+//    null;
+//}
 /*
-//Exercises: Level 3
-Write a program which tells the number of days in a month.
-  Enter a month: January
-  January has 31 days.
+    //Exercises: Level 3
+    Write a program which tells the number of days in a month.
+      Enter a month: January
+      January has 31 days.
 
-  Enter a month: JANUARY
-  January has 31 day
+      Enter a month: JANUARY
+      January has 31 day
 
-  Enter a month: February
-  February has 28 days.
+      Enter a month: February
+      February has 28 days.
 
-  Enter a month: FEbruary
-  February has 28 days.
-Write a program which tells the number of days in a month, now consider leap year.
-**/
+      Enter a month: FEbruary
+      February has 28 days.
+    Write a program which tells the number of days in a month, now consider leap year.
+    **/
