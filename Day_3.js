@@ -193,7 +193,7 @@ switch (month) {
 }
 
 let dayUserInput = prompt("What day is today ?");
-let day = dayUserInput.toLowerCase();
+let day = dayUserInput.toLowerCase().toUpperCase();
 
 switch (dayUserInput) {
   case "monday":
@@ -206,7 +206,7 @@ switch (dayUserInput) {
 
   case "saturday":
   case "sunday":
-    console.log(`${day} is working day`);
+    console.log(`${day} is a weekend`);
     break;
 
   default:
@@ -247,3 +247,32 @@ switch (dayUserInput) {
       February has 28 days.
     Write a program which tells the number of days in a month, now consider leap year.
     **/
+
+let months = prompt("Enter the month : ");
+
+switch (months) {
+  case "JANUARY":
+  case "March":
+  case "May":
+  case "July":
+  case "August":
+  case "October":
+  case "December":
+    console.log(`${months} has 31 days`);
+    break;
+
+  case "April":
+  case "June":
+  case "September":
+  case "November":
+    console.log(`${months} has 30 days`);
+    break;
+  case "February":
+    const currentYear = new Date().getFullYear();
+    const isLeapYear =
+      currentYear % 100 === 0 ? currentYear % 400 === 0 : currentYear % 4 === 0;
+    console.log(`${months} has ${isLeapYear ? "29" : "28"} days`);
+    break;
+  default:
+    console.log("this month has no days");
+}
