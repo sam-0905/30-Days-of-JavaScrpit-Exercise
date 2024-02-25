@@ -10,11 +10,11 @@ const webTechs = [ 'HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'Mongo
 4.Get the first item, the middle item and the last item of the array
 5.Declare an array called mixedDataTypes, put different data types in the array and find the length of the 6.array. The array size should be greater than 5
 6.Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
--Print the array using console.log()
--Print the number of companies in the array
--Print the first company, middle and last company
--Print out each company
--Change each company name to uppercase one by one and print them out
+      -Print the array using console.log()
+      -Print the number of companies in the array
+      -Print the first company, middle and last company
+      -Print out each company
+      -Change each company name to uppercase one by one and print them out
 
 7.Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
 8.Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
@@ -78,10 +78,64 @@ console.log(findArrayFirMidLastElem(countries));
 const mixedDataTypes = [
   "Asabeneh",
   250,
+  { skills: ["HTML", "CSS", "JS", "React", "Python"] },
   true,
   null,
   { country: "Finland", city: "Helsinki" },
-  { skills: ["HTML", "CSS", "JS", "React", "Python"] },
 ];
 
-console.log(mixedDataTypes.length);
+console.log(mixedDataTypes, mixedDataTypes.length);
+
+const companies = [
+  "Facebook",
+  "Google",
+  "Microsoft",
+  "Apple",
+  "IBM",
+  "Oracle and Amazon",
+];
+
+//console.log(companies, companies.length);
+
+function findArrayFirMidLastElem2(arr1) {
+  var result1 = [];
+  for (let i = 0; i < arr1.length; i++) {
+    if (
+      i === 0 ||
+      i === Math.ceil(arr1.length / 2) - 1 ||
+      i === arr1.length - 1
+    ) {
+      result1.push(arr1[i]);
+    }
+  }
+  return result1;
+}
+
+console.log(findArrayFirMidLastElem2(companies));
+
+function printEachItemInAnArray(arr2) {
+  for (let i = 0; i < arr2.length; i++) {
+    var elements = arr2[i];
+    console.log(elements);
+  }
+}
+
+var name = "allan";
+console.log(name.toUpperCase());
+
+console.log(printEachItemInAnArray(companies));
+
+function printEachItemInAnArray2(arr2) {
+  for (let i = 0; i < arr2.length; i++) {
+    var elements = arr2[i].toUpperCase();
+    console.log(elements);
+  }
+}
+
+console.log(printEachItemInAnArray2(companies));
+
+const sentence = [
+  "Oracle and Amazon are big IT companies,Facebook, Google, Microsoft, Apple, IBM.",
+];
+sentence.sort();
+console.log(sentence);
