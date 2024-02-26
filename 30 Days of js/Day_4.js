@@ -159,7 +159,7 @@ console.log("remove1", sentence.shift());
 const remEle = sentence.shift(Math.ceil(sentence.length / 2) - 1);
 console.log("remove1", remEle);
 
-const remLastEle = sentence.shift(Math.ceil(sentence.length - 1));
+const remLastEle = sentence.shift(sentence.length - 1);
 console.log("remove1", remLastEle);
 //console.log(first);
 //const res = sentence.find((el) => el > "o" === "o");
