@@ -96,6 +96,7 @@ const companies = [
 ];
 
 //console.log(companies, companies.length);
+console.log(companies.includes("Google"));
 
 function findArrayFirMidLastElem2(arr1) {
   var result1 = [];
@@ -135,7 +136,43 @@ function printEachItemInAnArray2(arr2) {
 console.log(printEachItemInAnArray2(companies));
 
 const sentence = [
-  "Oracle and Amazon are big IT companies,Facebook, Google, Microsoft, Apple, IBM.",
+  "Facebook",
+  "Google",
+  "Microsoft",
+  "Apple",
+  "IBM",
+  "Oracle and Amazon are big IT companies",
 ];
-sentence.sort();
 console.log(sentence);
+console.log("sentence =>", sentence.toString());
+console.log("sort", sentence.sort());
+
+const reverseArr = sentence.reverse();
+console.log("reverse", reverseArr);
+console.log(sentence.includes("Apple"));
+console.log("slice", sentence.slice());
+console.log("slice", sentence.slice(4));
+console.log("remove", sentence);
+//shift() // -> remove one item from the beginning
+console.log("remove1", sentence.shift());
+
+const remEle = sentence.shift(Math.ceil(sentence.length / 2) - 1);
+console.log("remove1", remEle);
+
+const remLastEle = sentence.shift(Math.ceil(sentence.length - 1));
+console.log("remove1", remLastEle);
+//console.log(first);
+//const res = sentence.find((el) => el > "o" === "o");
+//console.log(res);
+
+// POP() -remove one item from the end
+console.log(sentence.pop());
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.pop(); // -> remove one item from the end
+console.log(numbers);
+console.log(numbers.reverse());
+
+//splice -The Array.splice() method adds and removes array elements:
+const remAllEle = sentence.splice();
+console.log(remAllEle);
