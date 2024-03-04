@@ -58,7 +58,7 @@ const webTechs = [
 ];
 
 console.log(webTechs.length);
-console.log(webTechs.slice(2));
+//console.log(webTechs.slice(2));
 
 function findArrayFirMidLastElem(arr) {
   var result = [];
@@ -86,11 +86,11 @@ const mixedDataTypes = [
   { country: "Finland", city: "Helsinki" },
 ];
 console.log(
-  typeof arr[0],
-  typeof arr[1],
-  typeof arr[2],
-  typeof arr[3],
-  typeof arr[4]
+  typeof mixedDataTypes[0],
+  typeof mixedDataTypes[1],
+  typeof mixedDataTypes[2],
+  typeof mixedDataTypes[3],
+  typeof mixedDataTypes[4]
 );
 console.log(mixedDataTypes, mixedDataTypes.length);
 
@@ -127,10 +127,11 @@ function printEachItemInAnArray(arr2) {
     var elements = arr2[i];
     console.log(elements);
   }
+  return elements;
 }
 
-var name = "allan";
-console.log(name.toUpperCase());
+//var name = "allan";
+//console.log(name.toUpperCase());
 
 console.log(printEachItemInAnArray(companies));
 
@@ -139,6 +140,7 @@ function printEachItemInAnArray2(arr2) {
     var elements = arr2[i].toUpperCase();
     console.log(elements);
   }
+  return elements;
 }
 
 console.log(printEachItemInAnArray2(companies));
@@ -160,7 +162,7 @@ console.log("reverse", reverseArr);
 console.log(sentence.includes("Apple"));
 console.log("slice", sentence.slice());
 console.log("slice", sentence.slice(4));
-console.log("remove", sentence);
+//console.log("remove", sentence);
 //shift() // -> remove one item from the beginning
 console.log("remove1", sentence.shift());
 
@@ -211,12 +213,11 @@ console.log(words.length);
 let shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
 
 console.log("unshift", shoppingCart.unshift("Meat"), shoppingCart);
-console.log("concat", shoppingCart.concat("Sugar"));
+console.log("concat", shoppingCart.push("Sugar"));
 console.log("remove", shoppingCart);
 
 let items = ["Milk", "Coffee", "Tea", "Honey", "Bread", "Meat"];
 
-items.slice(0, 3);
 items.slice(0, 3); //['Milk', 'Coffee', 'Tea']
 items.slice(4); //['Bread', 'Meat']
 items = [...items.slice(0, 3), ...items.slice(4)];
