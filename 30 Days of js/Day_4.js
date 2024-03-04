@@ -285,17 +285,19 @@ function findAvr(arr) {
 
 console.log(findAvr(ages5));
 
-//let evenArr = [];
-//let oddArr = [];
+//"Albania","Bolivia","Canada","Denmark","Ethiopia","Finland","Germany","Hungary","Ireland","Japan","Kenya",
 
 function countriesOddOrEven(arr5) {
   if (arr5.length % 2 === 0) {
     console.log("entered if loop");
-    console.log("even", countries[arr5.length / 2]);
+    console.log("even", arr5.splice(0, arr5.indexOf("Finland")));
+    console.log("even", arr5.splice(0, 5, arr5.indexOf("Albania")));
   } else {
     console.log("not found ....");
-    console.log(countries.unshift("finland"));
-    console.log(countries);
+    console.log("odd", arr5.splice(0, arr5.indexOf("Germany")));
+    console.log("odd", arr5.splice(0, 5, arr5.indexOf("Bolivia")));
+
+    //console.log(countries);
   }
 }
 countriesOddOrEven(countries);
