@@ -85,7 +85,13 @@ const mixedDataTypes = [
   null,
   { country: "Finland", city: "Helsinki" },
 ];
-
+console.log(
+  typeof arr[0],
+  typeof arr[1],
+  typeof arr[2],
+  typeof arr[3],
+  typeof arr[4]
+);
 console.log(mixedDataTypes, mixedDataTypes.length);
 
 const companies = [
