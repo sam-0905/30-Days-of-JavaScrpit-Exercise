@@ -122,27 +122,43 @@ function findArrayFirMidLastElem2(arr1) {
 
 console.log(findArrayFirMidLastElem2(companies));
 
-function printEachItemInAnArray(arr2) {
-  for (let i = 0; i < arr2.length; i++) {
-    var elements = arr2[i];
-    console.log(elements);
+//console.log(companies);
+
+function PrintAllEntries(arr) {
+  //console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    var elements = arr + [i];
+    //console.log(elements);
   }
   return elements;
 }
+console.log(PrintAllEntries(companies));
 
-//var name = "allan";
-//console.log(name.toUpperCase());
-
+function printEachItemInAnArray(arr2) {
+  let newArr5 = [];
+  for (let i = 0; i < arr2.length; i++) {
+    newArr5.push(arr2[i]);
+  }
+  return newArr5;
+}
 console.log(printEachItemInAnArray(companies));
 
-function printEachItemInAnArray2(arr2) {
-  for (let i = 0; i < arr2.length; i++) {
-    var elements = arr2[i].toUpperCase();
-    console.log(elements);
-  }
-  return elements;
+//toUpperCase();
+const countries7 = ["Finland", "Sweden", "Denmark", "Norway", "Iceland"];
+const newArr = [];
+for (let i = 0; i < countries7.length; i++) {
+  newArr.push(countries7[i].toUpperCase());
 }
+// ["FINLAND", "SWEDEN", "DENMARK", "NORWAY", "ICELAND"]
+console.log(newArr);
 
+function printEachItemInAnArray2(arr2) {
+  let newArr3 = [];
+  for (let i = 0; i < arr2.length; i++) {
+    newArr3.push(arr2[i].toUpperCase());
+  }
+  return newArr3;
+}
 console.log(printEachItemInAnArray2(companies));
 
 const sentence = [
@@ -273,6 +289,15 @@ function printTheMiddlenum(arr3) {
 console.log(printTheMiddlenum(ages5));
 
 //let averageResult = findAvr(arr4) / ages5.length;
+
+// can be also shorten like this, sum += num
+// after this we will use the shorter synthax(+=, -=, *=, /= etc)
+const numbers$ = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let i = 0; i < numbers$.length; i++) {
+  sum = sum + numbers$[i]; // can be shorten, sum += numbers$[i]
+}
+console.log(sum); // 15
 
 function findAvr(arr) {
   let sum = 0;
