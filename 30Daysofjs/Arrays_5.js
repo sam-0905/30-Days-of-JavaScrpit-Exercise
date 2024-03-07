@@ -124,16 +124,6 @@ console.log(findArrayFirMidLastElem2(companies));
 
 //console.log(companies);
 
-function PrintAllEntries(arr) {
-  //console.log(arr);
-  for (let i = 0; i < arr.length; i++) {
-    var elements = arr + [i];
-    //console.log(elements);
-  }
-  return elements;
-}
-console.log(PrintAllEntries(companies));
-
 function printEachItemInAnArray(arr2) {
   let newArr5 = [];
   for (let i = 0; i < arr2.length; i++) {
