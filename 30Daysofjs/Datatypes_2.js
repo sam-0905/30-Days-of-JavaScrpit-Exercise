@@ -72,7 +72,7 @@ console.log(replaceWord);
 console.log(replaceWord.replace("JavaScript", "Python"));
 
 //charAt(): Takes index and it returns the value at that index
-//charCodeAt(): Takes index and it returns char code (ASCII number) of the value at that index
+//charCodeAt(): Takes index and it returns char code (ASCII American Standard Code for Information Interchange number) of the value at that index
 const string = "30 Days Of JavaScript";
 console.log(string.charAt(15));
 console.log(string.charCodeAt("11"));
