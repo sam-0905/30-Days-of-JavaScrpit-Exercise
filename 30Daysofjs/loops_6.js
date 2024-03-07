@@ -1,5 +1,4 @@
 //HACK:
-
 // can be also shorten like this, sum += num
 // after this we will use the shorter synthax((sum += num),+=, -=, *=, /= etc)
 
@@ -18,42 +17,6 @@ Iterate 10 to 0 using for loop, do the same using while and do while loop
 
 Iterate 0 to n using for loop
 
-Write a loop that makes the following pattern using console.log():
-
-    #
-    ##
-    ###
-    ####
-    #####
-    ######
-    #######
-Use loop to print the following pattern:
-
-0 x 0 = 0
-1 x 1 = 1
-2 x 2 = 4
-3 x 3 = 9
-4 x 4 = 16
-5 x 5 = 25
-6 x 6 = 36
-7 x 7 = 49
-8 x 8 = 64
-9 x 9 = 81
-10 x 10 = 100
-Using loop print the following pattern
-
- i    i^2   i^3
- 0    0     0
- 1    1     1
- 2    4     8
- 3    9     27
- 4    16    64
- 5    25    125
- 6    36    216
- 7    49    343
- 8    64    512
- 9    81    729
- 10   100   1000
 Use for loop to iterate from 0 to 100 and print only even numbers
 
 Use for loop to iterate from 0 to 100 and print only odd numbers
@@ -199,22 +162,80 @@ do {
   i++;
 } while (i <= 5);
 
-//let i2 = 0;
-//let newArr3 = [];
-//do {
-//  //  console.log(i2);
-//  newArr3 = [...newArr3, 10];
-//  i++;
-//} while (i2 < 5);
-//console.log(newArr3);
+//for in loop only for object.
+const user = {
+  name: "Pappu",
+  breed: "Golden",
+  age: "2years",
+};
+for (key in user) {
+  console.log(key);
+  user[key] = user[key].toLowerCase();
+}
+console.log(user);
 
-// for in loop only for object.
-//const user = {
-//  name: "Pappu",
-//  breed: "Golden",
-//  age: "2years",
-//};
-//for (key in user) {
-//  console.log(key);
-//  user[key] = user[key].toLowerCase();
-//}
+//?
+//Use loop to print the following pattern:
+//0 x 0 = 0
+//1 x 1 = 1
+//2 x 2 = 4
+//3 x 3 = 9
+//4 x 4 = 16
+//5 x 5 = 25
+//6 x 6 = 36
+//7 x 7 = 49
+//8 x 8 = 64
+//9 x 9 = 81
+//10 x 10 = 100
+
+function multiplyAllElem() {
+  for (let i = 0; i <= 10; i++) {
+    console.log(`${i} * ${i} = ${i * i}`);
+  }
+}
+
+multiplyAllElem();
+
+//?
+//Write a loop that makes the following pattern using console.log():
+//    #
+//    ##
+//    ###
+//    ####
+//    #####
+//    ######
+//    #######
+
+function PrintTheFollParten() {
+  console.log("printing ####");
+  for (let i = 0; i < 8; i++) {
+    console.log("#".repeat(i));
+  }
+}
+
+PrintTheFollParten();
+
+//?
+//Using loop print the following pattern
+// i    i^2   i^3
+// 0    0     0
+// 1    1     1
+// 2    4     8
+// 3    9     27
+// 4    16    64
+// 5    25    125
+// 6    36    216
+// 7    49    343
+// 8    64    512
+// 9    81    729
+// 10   100   1000
+
+function PrintSquareCubeAllElem() {
+  console.log("i", "i^2", "i^3 .......");
+
+  for (let i = 0; i <= 10; i++) {
+    console.log(`${i} ${i * i} ${i * i * i}`);
+  }
+}
+
+PrintSquareCubeAllElem();
