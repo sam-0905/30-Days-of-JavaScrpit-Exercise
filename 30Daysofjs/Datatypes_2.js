@@ -1,4 +1,5 @@
 /* 
+Exercises: Level 1
 1.Declare a variable named challenge and assign it to an initial value '30 Days Of JavaScript'.
 2.Print the string on the browser console using console.log()
 3.Print the length of the string on the browser console using console.log()
@@ -37,6 +38,7 @@ var phrase = "30 Days Of JavaScript";
 console.log(phrase.substr(2));
 
 /*
+Exercises: Level 2
 8.Check if the string contains a word Script using includes() method.
 9.Split the string into an array using split() method
 10.Split the string 30 Days Of JavaScript at the space using split() method
@@ -81,6 +83,7 @@ let lastIndex = string.length - 1;
 console.log(string.charCodeAt(lastIndex)); // t ASCII is 116
 
 /*
+Exercises: Level 3
 Use trim() to remove any trailing whitespace at the beginning and the end of a string.E.g ' 30 Days Of JavaScript '.
 Use startsWith() method with the string 30 Days Of JavaScript and make the result true
 Use endsWith() method with the string 30 Days Of JavaScript and make the result true
