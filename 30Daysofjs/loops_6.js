@@ -68,7 +68,7 @@ function printAllElem(arr) {
 
 console.log(printAllElem(countries));
 
-//Peint all arr toUpperCase()
+//Print all arr toUpperCase()
 function printAllElem2(arr) {
   const newArr1 = [];
   for (let i = 0; i < arr.length; i++) {
@@ -97,7 +97,6 @@ function printAllElem4(arr) {
   //  for (let i = 0; i < arr.length; i++) {
   //    newArr1.push(arr[i]);
   //    newArr1.reverse();
-  //    //arr.reverse();
   //  }
   //  return newArr1;
   return arr.reverse();
