@@ -91,7 +91,8 @@ function printAllElem3(arr) {
 }
 console.log(printAllElem3(countries));
 
-//print/iterate 10 to 0
+//NOTE:
+//Reverse An array
 function printAllElem4(arr) {
   //  const newArr1 = [];
   //  for (let i = 0; i < arr.length; i++) {
@@ -112,7 +113,8 @@ const sentence = [
   "IBM",
   "Oracle and Amazon are big IT companies",
 ];
-
+//NOTE:
+//Reverse An array
 const reverseArr = sentence.reverse();
 console.log("reverse", reverseArr);
 
@@ -131,7 +133,7 @@ while (i < countries.length) {
   newArr.push(countries[i]);
   i++;
 }
-console.log(newArr);
+console.log("While loop....", newArr);
 
 i = 0;
 const newArr1 = [];
@@ -143,11 +145,11 @@ console.log(newArr1);
 //NOTE:
 //If i++ was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
 
-let iA1 = 3;
-while (iA1) {
+let i_1 = 3;
+while (i_1) {
   // when i becomes 0, the condition becomes falsy, and the loop stops
-  console.log(iA1);
-  iA1--;
+  console.log(i_1);
+  i_1--;
 }
 
 // do while
@@ -157,7 +159,7 @@ while (iA1) {
 
 i = 0;
 do {
-  console.log(i);
+  console.log("do while loop....", i);
   i++;
 } while (i <= 5);
 
@@ -171,7 +173,7 @@ for (key in user) {
   console.log(key);
   user[key] = user[key].toLowerCase();
 }
-console.log(user);
+console.log("object...", user);
 
 //?
 //Use loop to print the following pattern:
@@ -206,7 +208,7 @@ multiplyAllElem();
 //    #######
 
 function PrintTheFollParten() {
-  console.log("printing ####");
+  console.log("printing .........");
   for (let i = 0; i < 8; i++) {
     console.log("#".repeat(i));
   }
@@ -238,3 +240,33 @@ function PrintSquareCubeAllElem() {
 }
 
 PrintSquareCubeAllElem();
+
+function PrintEvenNum() {
+  const evenArr = [];
+  const oddArr = [];
+  for (let i = 0; i <= 100; i++) {
+    //console.log(i % 2 === 0);
+    if (i % 2 === 0) {
+      evenArr.push(i);
+    } else {
+      oddArr.push(i);
+    }
+    //evenArr.push(i);
+    //console.log(evenArr);
+  }
+  return evenArr;
+}
+
+console.log("even", PrintEvenNum());
+
+const PrintOddNum = () => {
+  const oddArr = [];
+  for (let i = 0; i <= 100; i++) {
+    if (i % 2 !== 0) {
+      oddArr.push(i);
+    }
+  }
+  return oddArr;
+};
+
+console.log("odd", PrintOddNum());
