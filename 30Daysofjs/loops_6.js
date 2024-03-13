@@ -270,3 +270,88 @@ const PrintOddNum = () => {
 };
 
 console.log("odd", PrintOddNum());
+
+function printPrimeNum() {
+  const newPrimeNum = [];
+  for (let i = 0; i <= 100; i++) {
+    //console.log(i > 1, i % 1);
+    if (i > 1 && i % 1) {
+      //console.log(i);
+      newPrimeNum.push(i);
+    }
+  }
+  return newPrimeNum;
+}
+
+printPrimeNum();
+
+//function printPrimeNum() {
+//  const newPrimeNum = [];
+//  for (let i = 0; i <= 100; i++) {
+//    if (isPrime(i)) {
+//      newPrimeNum.push(i);
+//    }
+//  }
+//  return newPrimeNum;
+//}
+
+//printPrimeNum();
+
+function sumOfAllNum() {
+  let sum = 0;
+  for (let i = 0; i <= 100; i++) {
+    sum += i;
+  }
+  //console.log(sum);
+  return sum;
+}
+
+console.log("sum = ", sumOfAllNum());
+
+function sumOfAllEvenNum() {
+  let sum = 0;
+  for (let i = 0; i <= 100; i++) {
+    if (i % 2 === 0) {
+      sum += i;
+    }
+  }
+  //console.log(sum);
+  return sum;
+}
+
+console.log("sum of Even numbers", sumOfAllEvenNum());
+
+function sumOfAllOddNum() {
+  let sum = 0;
+  for (let i = 0; i <= 100; i++) {
+    if (i % 2 !== 0) {
+      sum += i;
+    }
+  }
+  //console.log(sum);
+  return sum;
+}
+
+console.log("sum of odd numbers", sumOfAllOddNum());
+
+function sumOfAllEvenAndOddNum() {
+  let evenSum = 0;
+  let oddSum = 0;
+
+  for (let i = 0; i <= 100; i++) {
+    if (i % 2 === 0) {
+      evenSum += i;
+    } else {
+      oddSum += i;
+    }
+  }
+  return [evenSum, oddSum];
+
+  //DOCS: If the key and value of the object is same then we could use  { evenSum, oddSum }
+  //return { evenSum, oddSum };
+
+  //DOCS: If the key and value of the object is different then we could use  { even: evenSum, odd: oddSum }
+  return { evenSumOfNums: evenSum, oddSumOfNums: oddSum };
+}
+
+console.log("Even and Odd sum:", sumOfAllEvenAndOddNum());
