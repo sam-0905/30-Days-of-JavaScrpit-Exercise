@@ -4,7 +4,7 @@
 
 /*
 Exercises: Level 1
-?Questions
+? Questions
 const countries = ['Albania', 'Bolivia', 'Canada','Denmark','Ethiopia','Finland','Germany','Hungary','Ireland','Japan','Kenya']
 
 const webTechs = ['HTML','CSS', 'JavaScript','React','Redux','Node','MongoDB']
@@ -65,7 +65,6 @@ function printAllElem(arr) {
   }
   return newArr;
 }
-
 console.log(printAllElem(countries));
 
 //Print all arr toUpperCase()
@@ -76,7 +75,6 @@ function printAllElem2(arr) {
   }
   return newArr1;
 }
-
 console.log(printAllElem2(countries));
 
 //print array is less than five charactrers
@@ -91,13 +89,12 @@ function printAllElem3(arr) {
 }
 console.log(printAllElem3(countries));
 
-//NOTE:
-//Reverse An array
+//NOTE: Reverse An array
 function printAllElem4(arr) {
   //  const newArr1 = [];
   //  for (let i = 0; i < arr.length; i++) {
-  //    newArr1.push(arr[i]);
-  //    newArr1.reverse();
+  //    newArr1.push(arr[i].reverse());
+  //!    newArr1.reverse();
   //  }
   //  return newArr1;
   return arr.reverse();
@@ -123,18 +120,19 @@ number.reverse();
 
 console.log(number);
 
-// while loop
-//NOTE:
+//DOCS:  while loop
 //While the condition is truthy, the code from the loop body is executed.
 
+//Print all the entries in array
 let i = 0;
 const newArr = [];
-while (i < countries.length) {
-  newArr.push(countries[i]);
+while (i < sentence.length) {
+  newArr.push(sentence[i]);
   i++;
 }
 console.log("While loop....", newArr);
 
+//Print all the entries in array in [caps]
 i = 0;
 const newArr1 = [];
 while (i < sentence.length) {
@@ -142,18 +140,19 @@ while (i < sentence.length) {
   i++;
 }
 console.log(newArr1);
+
 //NOTE:
 //If i++ was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
 
-let i_1 = 3;
-while (i_1) {
+//For instance, a shorter way to write while (i != 0) is while (i):
+let i2 = 3;
+while (i2) {
   // when i becomes 0, the condition becomes falsy, and the loop stops
-  console.log(i_1);
-  i_1--;
+  console.log("From while loop..", i2);
+  i2--;
 }
 
-// do while
-//NOTE:
+//DOCS: do while loop
 //The loop will first execute the body, then check the condition, and, while it’s truthy, execute it again and again.
 //This form of syntax should only be used when you want the body of the loop to execute at least once regardless of the condition being truthy. Usually, the other form is preferred: while(…) {…}.
 
@@ -161,8 +160,9 @@ i = 0;
 do {
   console.log("do while loop....", i);
   i++;
-} while (i <= 5);
+} while (i <= 3);
 
+//DOCS: for in loop
 //for in loop only for object.
 const user = {
   name: "Pappu",
@@ -174,6 +174,36 @@ for (key in user) {
   user[key] = user[key].toLowerCase();
 }
 console.log("object...", user);
+
+//DOCS: for of loop - Arrays,Strings,Maps
+//We use for of loop for arrays. It is very hand way to iterate through an array if we are not interested in the index of each element in the array.
+
+const countries1 = ["Finland", "Sweden", "Norway", "Denmark", "Iceland"];
+const newArr12 = [];
+for (const country of countries1) {
+  newArr12.push(country.toUpperCase());
+}
+console.log(newArr12);
+
+//!break
+//Break is used to interrupt a loop.
+
+for (let i = 0; i <= 5; i++) {
+  if (i == 3) {
+    break;
+  }
+  console.log("break", i);
+}
+
+//!continue
+//We use the keyword continue to skip a certain iterations.
+
+for (let i = 0; i <= 5; i++) {
+  if (i == 3) {
+    continue;
+  }
+  console.log("continue", i);
+}
 
 //?
 //Use loop to print the following pattern:
@@ -231,7 +261,7 @@ PrintTheFollParten();
 // 9    81    729
 // 10   100   1000
 
-function PrintSquareCubeAllElem() {
+function PrintSquareCubeElem() {
   console.log("i", "i^2", "i^3 .......");
 
   for (let i = 0; i <= 10; i++) {
@@ -239,7 +269,7 @@ function PrintSquareCubeAllElem() {
   }
 }
 
-PrintSquareCubeAllElem();
+PrintSquareCubeElem();
 
 function PrintEvenNum() {
   const evenArr = [];
