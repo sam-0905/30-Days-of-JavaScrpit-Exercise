@@ -17,29 +17,6 @@ Iterate 10 to 0 using for loop, do the same using while and do while loop
 
 Iterate 0 to n using for loop
 
-Use for loop to iterate from 0 to 100 and print only even numbers
-
-Use for loop to iterate from 0 to 100 and print only odd numbers
-
-Use for loop to iterate from 0 to 100 and print only prime numbers
-
-Use for loop to iterate from 0 to 100 and print the sum of all numbers.
-
-The sum of all numbers from 0 to 100 is 5050.
-Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
-
-The sum of all evens from 0 to 100 is 2550. And the sum of all odds from 0 to 100 is 2500.
-Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array
-
-  [2550, 2500]
-Develop a small script which generate array of 5 random numbers
-
-Develop a small script which generate array of 5 random numbers and the numbers must be unique
-
-Develop a small script which generate a six characters random id:
-
-5j2khz
-
 **/
 
 const countries = [
@@ -271,6 +248,8 @@ function PrintSquareCubeElem() {
 
 PrintSquareCubeElem();
 
+//? Use for loop to iterate from 0 to 100 and print only even numbers
+
 function PrintEvenNum() {
   const evenArr = [];
   const oddArr = [];
@@ -281,6 +260,7 @@ function PrintEvenNum() {
     } else {
       oddArr.push(i);
     }
+    //! If we console here it print each and every number in single time & not in an array
     //evenArr.push(i);
     //console.log(evenArr);
   }
@@ -288,6 +268,8 @@ function PrintEvenNum() {
 }
 
 console.log("even", PrintEvenNum());
+
+//? Use for loop to iterate from 0 to 100 and print only odd numbers
 
 const PrintOddNum = () => {
   const oddArr = [];
@@ -301,31 +283,39 @@ const PrintOddNum = () => {
 
 console.log("odd", PrintOddNum());
 
+//?Use for loop to iterate from 0 to 100 and print only prime numbers
+/*
+In this JavaScript code:
+- We start iterating from 2 up to 100 using a for loop.
+- For each number, we initialize a variable isPrime to true.
+- We then check divisibility of the current number by integers from 2 up to its square root. If it's      
+  divisible by any number in this range, we set isPrime to false and break out of the inner loop.
+- After the inner loop, if isPrime remains true, it means the number is prime, so we print it using console.log().
+**/
+
 function printPrimeNum() {
-  const newPrimeNum = [];
-  for (let i = 0; i <= 100; i++) {
-    //console.log(i > 1, i % 1);
-    if (i > 1 && i % 1) {
-      //console.log(i);
-      newPrimeNum.push(i);
+  const newArr = [];
+
+  for (let num = 2; num <= 100; num++) {
+    let isPrime = true;
+
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        isPrime = false;
+        break;
+      }
+    }
+    if (isPrime) {
+      //console.log(num);
+      newArr.push(num);
     }
   }
-  return newPrimeNum;
+  return newArr;
 }
 
-printPrimeNum();
+console.log("Prime Numbers..", printPrimeNum());
 
-//function printPrimeNum() {
-//  const newPrimeNum = [];
-//  for (let i = 0; i <= 100; i++) {
-//    if (isPrime(i)) {
-//      newPrimeNum.push(i);
-//    }
-//  }
-//  return newPrimeNum;
-//}
-
-//printPrimeNum();
+//?The sum of all numbers from 0 to 100 is 5050.
 
 function sumOfAllNum() {
   let sum = 0;
@@ -338,6 +328,7 @@ function sumOfAllNum() {
 
 console.log("sum = ", sumOfAllNum());
 
+//?The sum of all evens from 0 to 100 is 2550.
 function sumOfAllEvenNum() {
   let sum = 0;
   for (let i = 0; i <= 100; i++) {
@@ -350,6 +341,8 @@ function sumOfAllEvenNum() {
 }
 
 console.log("sum of Even numbers", sumOfAllEvenNum());
+
+//?And the sum of all odds from 0 to 100 is 2500.
 
 function sumOfAllOddNum() {
   let sum = 0;
@@ -364,6 +357,8 @@ function sumOfAllOddNum() {
 
 console.log("sum of odd numbers", sumOfAllOddNum());
 
+//?Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array [2550, 2500]
+
 function sumOfAllEvenAndOddNum() {
   let evenSum = 0;
   let oddSum = 0;
@@ -377,6 +372,7 @@ function sumOfAllEvenAndOddNum() {
   }
   return [evenSum, oddSum];
 
+  //! In case of objects
   //DOCS: If the key and value of the object is same then we could use  { evenSum, oddSum }
   //return { evenSum, oddSum };
 
@@ -385,3 +381,98 @@ function sumOfAllEvenAndOddNum() {
 }
 
 console.log("Even and Odd sum:", sumOfAllEvenAndOddNum());
+
+//? Develop a small script which generate array of 5 random numbers
+function generateRandomArray(length, min, max) {
+  let randomArray = [];
+  for (let i = 0; i < length; i++) {
+    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    randomArray.push(randomNumber);
+  }
+  return randomArray;
+}
+
+const arrayLength = 5;
+const minValue = 1;
+const maxValue = 100;
+
+const randomArray = generateRandomArray(arrayLength, minValue, maxValue);
+console.log("Generated Random Array:", randomArray);
+
+//? Develop a small script which generate a six characters random id:e.g.5j2khz
+
+const randomId = generateRandomId();
+console.log("Generated Random ID:", randomId);
+
+function generateRandomId() {
+  let characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let id = "";
+  for (let i = 0; i < 6; i++) {
+    id += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return id;
+}
+
+//? Develop a small script which generate array of 5 random numbers and the numbers must be unique
+
+const arrayLength3 = 5;
+const minValue3 = 1;
+const maxValue3 = 100;
+
+const randomArray3 = generateUniqueRandomArray(
+  arrayLength3,
+  minValue3,
+  maxValue3
+);
+console.log("Generated Unique Random Array:", randomArray3);
+
+function generateUniqueRandomArray(length, min, max) {
+  if (max - min + 1 < length) {
+    throw new Error(
+      "Cannot generate unique numbers with the given range and length"
+    );
+  }
+
+  let randomArray = [];
+  while (randomArray.length < length) {
+    let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (!randomArray.includes(randomNumber)) {
+      randomArray.push(randomNumber);
+    }
+  }
+  return randomArray;
+}
+
+//?Develop a small script which generate any number of characters random id:
+
+function generateRandomId2(length) {
+  let characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let id = "";
+  for (let i = 0; i < length; i++) {
+    id += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return id;
+}
+
+const numberOfCharacters = 20; // Change this to generate IDs with different lengths
+const randomId2 = generateRandomId2(numberOfCharacters);
+console.log("Generated Random ID:", randomId2);
+
+// ?Write a script which generates a random rgb color number.
+
+function generateRandomRGBColor() {
+  const red = Math.floor(Math.random() * 256); // Random integer between 0 and 255
+  const green = Math.floor(Math.random() * 256); // Random integer between 0 and 255
+  const blue = Math.floor(Math.random() * 256); // Random integer between 0 and 255
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+const randomColor = generateRandomRGBColor();
+console.log("Generated Random RGB Color:", randomColor);
+
+//?Using the above countries array, create an array for countries length'.
+
+const countriesLength = countries.map((country) => country.length);
+console.log("Length of each country name:", countriesLength);
