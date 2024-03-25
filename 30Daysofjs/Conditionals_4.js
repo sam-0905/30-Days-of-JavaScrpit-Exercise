@@ -231,9 +231,10 @@ switch (dayUserInput) {
 //    console.log(`Someone is idle :)`);
 //    null;
 //}
+
 /*
-    //Exercises: Level 3
-    Write a program which tells the number of days in a month.
+    Exercises: Level 3
+  ?  Write a program which tells the number of days in a month.
       Enter a month: January
       January has 31 days.
 
