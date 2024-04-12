@@ -45,6 +45,7 @@ console.log(fullName2("allan", "sam"));
 function addNumbers(numOne, numTwo) {
   let sum = numOne + numTwo;
   console.log(sum);
+  return sum;
 }
 
 addNumbers(10, 5);
