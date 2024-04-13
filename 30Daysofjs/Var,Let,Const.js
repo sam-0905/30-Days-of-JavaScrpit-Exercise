@@ -69,4 +69,21 @@ console.log(f); //!It gives, Reference error : cannot access befor intialization
 let f = 10;
 //outpu > undefined - In this case Var is moving the declaration top of the program as we seen in the example and intialize it in the value of undefined.
 
+//------------------------------------------------------------------------------------------------------
+
 //NOTE: CONST
+//i) In const "SRTICTLY" we cannot redelare a variable
+const g = "appu";
+//g = "aneena"; //!  It gives, Type error : Assignment to a constant variable
+//const g = "aneena"; .//!  It gives, syntax error :  Identifier e is already declared.
+
+console.log(g); //aneena
+
+//ii)only way to change the value in const is
+const h = {
+    msg: "say hi",
+    times: 4,
+};
+//To change the value
+h.msg = "appu kutty";
+console.log(h.msg); //say hi
