@@ -36,6 +36,17 @@ if (true) {
 }
 //output > say hello instead - this greeter1 gets overwitten by above greeter1 value.
 
+if (true) {
+    var gravity = 9.81;
+    console.log(gravity); // 9.81
+}
+console.log(gravity); // 9.81
+
+for (var i = 0; i < 3; i++) {
+    console.log(i); // 0, 1, 2
+}
+console.log(i); // 3
+
 //------------------------------------------------------------------------------------------------
 
 //NOTE: let
