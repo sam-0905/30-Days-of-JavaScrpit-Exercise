@@ -13,6 +13,7 @@ dog.legs = "Four";
 dog.color = "Golden";
 dog.age = 2;
 dog.bark = "yes";
+dog.breed = "Golden retrevier";
 
 console.log(dog);
 
