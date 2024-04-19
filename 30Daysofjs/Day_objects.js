@@ -137,3 +137,55 @@ console.log(object3.hasOwnProperty("property1"));
 
 console.log(object3.hasOwnProperty("toString"));
 // Expected output: false
+
+//! this method in object
+
+let user = {
+    name: "John",
+    age: 30,
+
+    sayHi() {
+        // "this" is the "current object"
+        alert(this.name);
+    },
+};
+
+user.sayHi(); // John
+
+let user2 = {
+    name: "John",
+    age: 30,
+
+    sayHi() {
+        alert(user2.name); // "user" instead of "this"
+    },
+};
+
+let user3 = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+    alert(this.name);
+}
+
+// use the same function in two objects
+user3.f = sayHi;
+admin.f = sayHi;
+
+// these calls have different this
+// "this" inside the function is the object "before the dot"
+user3.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin["f"](); // Admin (dot or square brackets access the method – doesn't matter)
+
+//Arrow fun does'nt have this.
+let user4 = {
+    firstName: "Ilya",
+    sayHi() {
+        let arrow = () => alert(this.firstName);
+        arrow();
+    },
+};
+
+user4.sayHi(); // Ilya
