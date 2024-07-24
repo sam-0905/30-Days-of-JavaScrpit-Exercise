@@ -32,7 +32,7 @@ console.log(cutName.substr(0, 1));
 // substring(): It takes two arguments, the starting index and the stopping index but it doesn't include the character at the stopping index.
 let country = "finland";
 console.log(country.substring(1));
-console.log(country.substring(5, 0));
+console.log(country.substring(0, 3));
 
 var phrase = "30 Days Of JavaScript";
 console.log(phrase.substr(2));
@@ -57,7 +57,7 @@ console.log(checkWord.includes("fundamental"));
 console.log(checkWord.includes("java"));
 
 //The split method splits a string at a specified place.
-
+``;
 var checkWord2 = "JavaScrpit is the fundamental";
 console.log(checkWord2.split());
 console.log(checkWord2.split(""));
