@@ -71,7 +71,6 @@ const products = [
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
 ]
-Explain the difference between forEach, map, filter, and reduce.
 Define a callback function before you use it in forEach, map, filter or reduce.
 Use forEach to console.log each country in the countries array.
 Use forEach to console.log each name in the names array.
@@ -100,4 +99,25 @@ Use findIndex to find the position of Russia if it doesn't exist in the array yo
 
  **/
 
+//?Explain the difference between forEach, map, filter, and reduce.
+
 const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+
+//DOCS: forEach - only for arrays.It iterates an array element.
+countries.forEach((element) => console.log(element.toUpperCase()))
+
+//DOCS: map- Iterate an array elements and modify the array elements.
+const numbers2 = [1, 2, 3, 4, 5]
+const numbersSquare = numbers2.map((num) => num * num)
+console.log(numbersSquare)
+
+//DOCS: filter -Filter out items which full fill filtering conditions and return a new array.
+const countriesHave5Letter = countries.filter((country) => country.length > 5)
+console.log(countriesHave5Letter)
+
+/* 
+DOCS: reduce: Reduce takes a callback function and returns a single value. It is a good practice to define an initial value for the accumulator value. If we do not specify this parameter, by default accumulator will get array first value. If our array is an empty array, then Javascript will throw an error.
+**/
+const numbers3 = [1, 2, 3, 4, 5]
+const sum = numbers3.reduce((acc, cur) => acc + cur, 0)
+console.log(sum)
