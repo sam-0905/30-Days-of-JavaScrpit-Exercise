@@ -6,62 +6,61 @@
 
 // callback function
 function showName(name) {
-    console.log(`My name is ${name}`);
+  console.log(`My name is ${name}`);
 }
 // High order function
 function userName(firstName, cb) {
-    return cb(firstName);
+  return cb(firstName);
 }
 userName("Vansh", showName); // My name is Vansh
 
 // Higher order function returning an other function
 const higherOrder = (n) => {
-    const doSomething = (m) => {
-        const doWhatEver = (t) => {
-            return 2 * n + 3 * m + t;
-        };
-        return doWhatEver;
+  const doSomething = (m) => {
+    const doWhatEver = (t) => {
+      return 2 * n + 3 * m + t;
     };
-    return doSomething;
+    return doWhatEver;
+  };
+  return doSomething;
 };
 console.log(higherOrder(2)(3)(10));
 
 //Let us see were we use call back functions. For instance the forEach method uses call back.
 
-const numbers = [1, 2, 3, 4]​
-const sumArray = arr => {
-    let sum = 0
-    arr.forEach(function(element) {
-        sum += element
-    })
-    return sum
-}
-console.log(sumArray(numbers))
+const numbers = [1, 2, 3, 4];
+const sumArray = (arr) => {
+  let sum = 0;
+  arr.forEach(function (element) {
+    sum += element;
+  });
+  return sum;
+};
+console.log(sumArray(numbers));
 
 //? setInterval
 //The setInterval global method take a callback function and a duration as a parameter. The duration is in milliseconds and the callback will be always called in that interval of time.
 
+//DOCS:
 // syntax
 function callback() {
-    // code goes here
+  // code goes here
+  //  setInterval(callback, duration);
 }
-setInterval(callback, duration)
 
 function sayHello() {
-    console.log('Hello')
+  console.log("Hello");
 }
 //setInterval(sayHello, 1000) // it prints hello in every second, 1000ms is 1s
 
 //?Setting a time using a setTimeout
 function sayHello() {
-    console.log('Hello')
+  console.log("Hello");
 }
-setTimeout(sayHello, 2000) // it prints hello after it waits for 2 seconds.
-
+setTimeout(sayHello, 2000); // it prints hello after it waits for 2 seconds.
 
 /*   Exercises: Level 1
 const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const products = [
   { product: 'banana', price: 3 },
@@ -72,13 +71,8 @@ const products = [
   { product: 'tea', price: '' },
 ]
 Define a callback function before you use it in forEach, map, filter or reduce.
-Use forEach to console.log each country in the countries array.
-Use forEach to console.log each name in the names array.
-Use forEach to console.log each number in the numbers array.
-Use map to create a new array by changing each country to uppercase in the countries array.
-Use map to create an array of countries length from countries array.
-Use map to create a new array by changing each number to square in the numbers array
-Use map to change to each name to uppercase in the names array
+
+
 Use map to map the products array to its corresponding prices.
 Use filter to filter out countries containing land.
 Use filter to filter out countries having six character.
@@ -101,23 +95,48 @@ Use findIndex to find the position of Russia if it doesn't exist in the array yo
 
 //?Explain the difference between forEach, map, filter, and reduce.
 
-const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const countries = ["Finland", "Sweden", "Denmark", "Norway", "IceLand"];
 
 //DOCS: forEach - only for arrays.It iterates an array element.
-countries.forEach((element) => console.log(element.toUpperCase()))
+countries.forEach((element) => console.log("forEach", element.toUpperCase()));
 
 //DOCS: map- Iterate an array elements and modify the array elements.
-const numbers2 = [1, 2, 3, 4, 5]
-const numbersSquare = numbers2.map((num) => num * num)
-console.log(numbersSquare)
+const numbers2 = [1, 2, 3, 4, 5];
+const numbersSquare = numbers2.map((num) => num * num);
+console.log("map", numbersSquare);
 
 //DOCS: filter -Filter out items which full fill filtering conditions and return a new array.
-const countriesHave5Letter = countries.filter((country) => country.length > 5)
-console.log(countriesHave5Letter)
+const countriesHave5Letter = countries.filter((country) => country.length <= 6);
+console.log("filter", countriesHave5Letter);
 
 /* 
 DOCS: reduce: Reduce takes a callback function and returns a single value. It is a good practice to define an initial value for the accumulator value. If we do not specify this parameter, by default accumulator will get array first value. If our array is an empty array, then Javascript will throw an error.
 **/
-const numbers3 = [1, 2, 3, 4, 5]
-const sum = numbers3.reduce((acc, cur) => acc + cur, 0)
-console.log(sum)
+
+//Filter
+const numbers3 = [1, 2, 3, 4, 5];
+const sum = numbers3.reduce((acc, cur) => acc + cur, 0);
+console.log("reduce", sum);
+
+//? Use forEach to console.log each country in the countries array.
+countries.forEach((element) => console.log(element));
+
+//? Use forEach to console.log each name in the names array.
+const names = ["Asabeneh", "Mathias", "Elias", "Brook"];
+names.forEach((ele) => console.log(ele));
+
+//Map
+//?Use map to create a new array by changing each country to uppercase in the countries array.
+const mapRes = countries.map((country) => country.toUpperCase());
+console.log(mapRes);
+
+//?Use map to create an array of countries length from countries array.
+const newArr = [];
+const mapLen = countries.map((country) => newArr.push(country.length));
+console.log(mapLen);
+
+//?Use map to create a new array by changing each number to square in the numbers array.
+const numbers4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const newArr2 = [];
+const mapSquare = numbers4.map((num) => newArr2.push(num * num));
+console.log(mapSquare);
