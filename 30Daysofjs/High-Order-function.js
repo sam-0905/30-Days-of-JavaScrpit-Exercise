@@ -142,4 +142,4 @@ const mapSquare = numbers4.map((num) => newArr2.push(num * num));
 console.log(mapSquare);
 
 
-console.log("testing")
+console.log("testing1")
