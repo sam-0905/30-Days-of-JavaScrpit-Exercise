@@ -140,3 +140,6 @@ const numbers4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const newArr2 = [];
 const mapSquare = numbers4.map((num) => newArr2.push(num * num));
 console.log(mapSquare);
+
+
+console.log("testing")
