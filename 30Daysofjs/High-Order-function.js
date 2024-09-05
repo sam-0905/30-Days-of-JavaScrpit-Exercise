@@ -146,15 +146,12 @@ const mapRes = countries.map((country) => country.toUpperCase());
 console.log(mapRes);
 
 //?Use map to create an array of countries length from countries array.
-const newArr = [];
-const mapLen = countries.map((country) => newArr.push(country.length));
-console.log(mapLen);
+const mapLen = countries.map((country) => country.length);
+console.log("mapLen = ",mapLen);
 
 //?Use map to create a new array by changing each number to square in the numbers array.
 const numbers4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const newArr2 = [];
-const mapSquare = numbers4.map((num) => newArr2.push(num * num));
-console.log(mapSquare);
+const mapSquare = numbers4.map((num) => num * num);
+console.log("map square = ",mapSquare);
 
 
-console.log("testing1")
