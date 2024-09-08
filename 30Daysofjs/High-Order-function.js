@@ -93,30 +93,45 @@ Use findIndex to find the position of Russia if it doesn't exist in the array yo
 
  **/
 
-//?Explain the difference between forEach, map, filter, and reduce.
-
+//? Explain the difference between forEach, map, filter, and reduce.
+// DOCS :
+// forEach - only for arrays.It iterates an array element.
 const countries = ["Finland", "Sweden", "Denmark", "Norway", "IceLand"];
+countries.forEach((element) => console.log("forEach =", element.toUpperCase()));
 
-//DOCS: forEach - only for arrays.It iterates an array element.
-countries.forEach((element) => console.log("forEach", element.toUpperCase()));
-
-//DOCS: map- Iterate an array elements and modify the array elements.
+// DOCS :
+// map- Iterate an array elements and modify the array elements.
 const numbers2 = [1, 2, 3, 4, 5];
 const numbersSquare = numbers2.map((num) => num * num);
 console.log("map", numbersSquare);
 
-//DOCS: filter -Filter out items which full fill filtering conditions and return a new array.
+//  DOCS :
+// filter -Filter out items which fulfill filtering conditions and return a new array.
 const countriesHave5Letter = countries.filter((country) => country.length <= 6);
 console.log("filter", countriesHave5Letter);
 
+//  DOCS :
 /* 
-DOCS: reduce: Reduce takes a callback function and returns a single value. It is a good practice to define an initial value for the accumulator value. If we do not specify this parameter, by default accumulator will get array first value. If our array is an empty array, then Javascript will throw an error.
+reduce: Reduce takes a callback function and returns a single value. It is a good practice to define an initial value for the accumulator value. If we do not specify this parameter, by default accumulator will get array first value. If our array is an empty array, then Javascript will throw an error.
 **/
-
-//Filter
 const numbers3 = [1, 2, 3, 4, 5];
 const sum = numbers3.reduce((acc, cur) => acc + cur, 0);
 console.log("reduce", sum);
+
+// DOCS 
+// find: Return the first element which satisfies the condition
+const names1 = ["Appukutty",'Asabeneh', 'Mathias', 'Elias', 'Brook']
+const result1 = names1.find((name) => name.length > 7)
+console.log(result1)
+
+// DOCS :
+// findIndex: Return the position of the first element which satisfies the condition
+const names2 = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const result = names2.findIndex((name) => name.length > 7)
+console.log(result) // 0
+
+// ------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------
 
 //? Use forEach to console.log each country in the countries array.
 countries.forEach((element) => console.log(element));
@@ -131,12 +146,12 @@ const mapRes = countries.map((country) => country.toUpperCase());
 console.log(mapRes);
 
 //?Use map to create an array of countries length from countries array.
-const newArr = [];
-const mapLen = countries.map((country) => newArr.push(country.length));
-console.log(mapLen);
+const mapLen = countries.map((country) => country.length);
+console.log("mapLen = ",mapLen);
 
 //?Use map to create a new array by changing each number to square in the numbers array.
 const numbers4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const newArr2 = [];
-const mapSquare = numbers4.map((num) => newArr2.push(num * num));
-console.log(mapSquare);
+const mapSquare = numbers4.map((num) => num * num);
+console.log("map square = ",mapSquare);
+
+
