@@ -100,7 +100,7 @@ const countries = ["Finland", "Sweden", "Denmark", "Norway", "IceLand"];
 countries.forEach((element) => console.log("forEach =", element.toUpperCase()));
 
 // DOCS :
-// map- Iterate an array elements and modify the array elements.
+// map- Iterate an array elements and modify the array elements.It also retuen a new array
 const numbers2 = [1, 2, 3, 4, 5];
 const numbersSquare = numbers2.map((num) => num * num);
 console.log("map", numbersSquare);
